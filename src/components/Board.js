@@ -13,15 +13,9 @@ const style = {
 
 const Board = ({ squeares, onClick }) => (
     <div style= {style}>
-        <Square value="1" onClick={() => onClick("lel")}/>
-        <Square value="2" onClick={() => onClick("lel")}/>
-        <Square value="3" onClick={() => onClick("lel")}/>
-        <Square value="4" onClick={() => onClick("lel")}/>
-        <Square value="5" onClick={() => onClick("lel")}/>
-        <Square value="6" onClick={() => onClick("lel")}/>
-        <Square value="7" onClick={() => onClick("lel")}/>
-        <Square value="8" onClick={() => onClick("lel")}/>
-        <Square value="9" onClick={() => onClick("lel")}/>
+        {squeares.map((square, i) => (
+            <Square key={i} value={square} onClick={() => onClick(i)}/>
+        ))}
     </div>
 )
 export default Board;
