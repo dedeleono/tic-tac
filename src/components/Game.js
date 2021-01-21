@@ -13,6 +13,12 @@ const buttonStyle = {
     padding: '2px',
     border: '2px solid blue',
     borderRadius: '3px',
+};
+
+const spanStyle = {
+    marginTop: '0',
+    paddingTop: '0',
+    position: 'absolute',
 }
 
 const Game = () => {
@@ -57,10 +63,9 @@ const Game = () => {
  
     return(
         <>
-            <Board squeares={history[stepNumber]} onClick={handleClick} />
+            <Board squeares={history[stepNumber]} onClick={handleClick} /><span style={spanStyle}>{renderMoves()}</span>
             <div style={styles}>
                 <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
-                {renderMoves()}
             </div>
         </>
     )
